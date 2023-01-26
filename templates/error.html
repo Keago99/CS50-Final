@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Oops, something went wrong
+{% endblock %}
+
+{% block main %}
+    <div class="text-center">
+        <img src="../static/images/Error.jpg" class="img-fluid" alt="Responsive image" width= "700">
+    </div>
+    <div class="text-center">
+        Oops something went wrong!, looks like we ran into: {{ error }}
+        <br>
+        <button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+    </div>
+    
+
+{% endblock %}

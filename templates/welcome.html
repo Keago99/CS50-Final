@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../static/images/squattingBlonde.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+        <h3>Welcome!</h3>
+        <p>
+            Welcome to my 1 month Candito Strength Training Planner, the goal of this website is you provide one month of training using
+            Canditos Linear progression template.
+        </p>
+        <p>
+            The program focuses on the Squat, Bench Press, Overhead Press and Deadlift, these are all compound movements
+            (Movements that use multiple joints) that work the entire body from head to toe! 
+        </p>
+        <p>
+            Firstly getting familiar with the base program and what it entails will be very helpful in order to use this websites features.
+            The program can be found <a href="http://www.canditotraininghq.com/free-programs/">here</a> under "Candito Linear Program"
+        </p>
+        <p>
+            <h1>How this website works</h1>
+            <p>
+                Firstly we will need to know how to perform the main lifts in the program, this can be found <a href="http://www.canditotraininghq.com/free-programs/">here</a>
+                and at the navigation bar on top of the screen titled: "How to lift"
+            </p>
+            <p>
+                The next page, known as the Calibration page will allow you to input all required lifts, with accesory lifts requiring only a barbell for simplicities sake
+            </p>
+        </p>
+        <a class="btn btn-primary" href="/calibrate" role="button">Lets get set up!</a>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../static/images/deadliftDude.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</div>
+{% endblock %}

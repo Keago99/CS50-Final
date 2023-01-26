@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calibrate
+{% endblock %}
+
+{% block main %}
+{% with messages = get_flashed_messages() %}  
+{% if messages %}  
+      {% for message in messages %}  
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}  
+{% endif %}  
+{% endwith %} 
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../static/images/redPlatesDeadlift.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+        <h3>Calibration!</h3>
+        <p>
+            Here we will input our Rep Maxes for all lifts used in this program, this will inform how we will lay
+            out our months training by basing it of a percentage of this number.
+        </p> 
+        <p>
+            If you do not know your rep maxes a handy online calulator for this can be seen <a href="https://exrx.net/Calculators/OneRepMax">here</a>
+        </p>
+        <div class="card" style="width: 28rem;">
+            <form action="/calibrate" method="post">
+                <div class="text-center bg-danger">
+                    Please enter your 1RM for the Back Squat
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="Squat" name="Squat" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter your 1RM for the Deadlift
+                    <input class="form-control mx-auto w-auto" id="Deadlift" name="Deadlift" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter your 1RM for the Bench Press
+                    <input class="form-control mx-auto w-auto" id="Bench" name="Bench" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter your 6RM for the Barbell Row
+                    <input class="form-control mx-auto w-auto" id="BBRow" name="BBRow" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter your 6RM for the Overhead Press
+                    <input class="form-control mx-auto w-auto" id="OverheadPress" name="OverheadPress" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter your 10RM for the Barbell Curl
+                    <input class="form-control mx-auto w-auto" id="BBCurl" name="BBCurl" placeholder="KG" type="number" min="20">
+                </div>
+                <div class="text-center bg-danger">
+                    Please enter how may pull-ups you can do
+                    <input class="form-control mx-auto w-auto" id="Pullups" name="Pullups" placeholder="Repetitions" type="number" min="0">
+                </div>
+                <div class="text-center bg-danger">
+                <button class="btn btn-primary" type="submit">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <img src="../static/images/overheadLady.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="card top-buffer" style="width: 28rem;">
+                    <form action="/register" method="post">
+                        <div class="text-center bg-danger">
+                            Please chose a unique username
+                            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+                        </div>
+                        <div class="text-center bg-danger">
+                            Please enter a strong password
+                            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+                        </div>
+                        <div class="text-center bg-danger">
+                            Please re-type your password
+                            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Re-type password" type="password">
+                        </div>
+                        <div class="text-center bg-danger">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+         </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <img src="../static/images/CrossfitLady.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+    </div>
+</div>
+
+{% endblock %}

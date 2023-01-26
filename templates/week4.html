@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Week 2 
+{% endblock %}
+
+{% block main %}
+<div class="row row-cols-2 row-cols-md-3">
+        <div class="card text-white bg-danger mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/smolDeadlift3.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Monday</h5>
+                <h6 class="card-subtitle mb-2">Heavy Lower Day</h6>
+                <p class="card-text">
+                    {{ ((Info[0]["Squat"]*0.7)|round|int + 15) }}KG Squat 3 sets 6 Reps<br>
+                    {{ ((Info[0]["Deadlift"]*0.7)|round|int + 15) }}KG Deadlift 2 sets 6 Reps<br>
+                    {{ (Info[0]["Deadlift"]*0.5)|round|int + 5}}KG Stiff Leg Deadlift 3 sets 8 Reps
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-primary mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/smolBenchw41.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tuesday</h5>
+                <h6 class="card-subtitle mb-2">Heavy Upper Day</h6>
+                <p class="card-text">
+                    {{ (Info[0]["Bench"]*0.75)|round|int + 15 }}KG Bench Press 3 sets 6 Reps<br>
+                    {{ (Info[0]["BBRow"]*0.85)|round|int + 15 }}KG Barbell Row 3 sets 6 Reps<br>
+                    {{ (Info[0]["OverheadPress"]*0.85)|round|int + 5 }}KG Overhead Press Row 1 set 6 Reps<br>
+                    {% if (Info[0]["Pullups"]|int) >= 3 -%}
+                    Pullups 5 sets {{(Info[0]["Pullups"]*0.5)|round|int + 2 }} reps<br> 
+                    {% else -%}
+                    Assisted Pullups 4 reps 5 sets<br>
+                    {% endif %}
+                    {{ (Info[0]["BBCurl"]*0.85)|round|int + 5 }}KG Barbell Curl 3 sets 8 Reps<br>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/sleepingApe.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Wednesday</h5>
+                <h6 class="card-subtitle mb-2">Rest Day</h6>
+                <p class="card-text">
+                    Its normal to feel a bit run down on your final week of training, increasing your warm-ups and rest periods can help.
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-danger mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/SmolSqW2.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Thursday</h5>
+                <h6 class="card-subtitle mb-2">Control Lower Day</h6>
+                {{ ((Info[0]["Squat"]*0.6)|round|int + 15) }}KG Pause Squat 6 sets x 4 reps<br>
+                {{ ((Info[0]["Deadlift"]*0.6)|round|int + 15) }}KG Pause Deadlifts 3 sets x 4 reps<br>
+                {{ (Info[0]["Deadlift"]*0.5)|round|int + 10}}KG Stiff Leg Deadlift 3 sets 8 Reps
+            </div>
+        </div>
+
+        <div class="card text-white bg-primary mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/smolBenchw43.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Friday</h5>
+                <h6 class="card-subtitle mb-2">Control Upper Day</h6>
+                <p class="card-text">
+                    <p class="card-text">
+                        {{ ((Info[0]["Bench"]*0.60)|round|int + 10) }}KG Spoto Press 6 sets 4 Reps<br>
+                        {{ ((Info[0]["BBRow"]*0.75)|round|int + 10) }}KG Barbell Row (Pause at full contraction) 3 sets 6 Reps<br>
+                        {{ (Info[0]["OverheadPress"]*0.65)|round|int + 5}}KG Overhead Press Row 1 set 10 Reps<br>
+                        {% if (Info[0]["Pullups"]|int) >= 3 -%}
+                        Pullups 5 sets {{(Info[0]["Pullups"]*0.5)|round|int + 2 }} reps<br> 
+                        {% else -%}
+                        Assisted Pullups 4 reps 5 sets<br>
+                        {% endif %}
+                        {{ (Info[0]["BBCurl"]*0.85)|round|int + 5}}KG Barbell Curl 3 sets 8 Reps<br>
+                    </p>
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/sleepingSeal.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Saterday</h5>
+                <h6 class="card-subtitle mb-2">Rest Day</h6>
+                <p class="card-text">
+                    Bumping up your calories on the last week of training is a good way to ensure recovery.
+                </p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mx-auto" style="width: 18rem;" id="weekCard" >
+            <img class="card-img-top" src="../static/images/SleepingHusky.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Sunday</h5>
+                <h6 class="card-subtitle mb-2">Rest Day</h6>
+                <p class="card-text">
+                    Well done on a succesful month of training! Time to relax and test your new max reps for lifts!
+                </p>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
